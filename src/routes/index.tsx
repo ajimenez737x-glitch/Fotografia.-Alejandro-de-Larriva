@@ -324,8 +324,7 @@ function Lightbox({ category, onClose }: { category: Category; onClose: () => vo
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
 
-  // Show variations using the category image plus siblings for richness
-  const images = [category.image, ...categories.filter((c) => c.id !== category.id).map((c) => c.image)];
+  const images = galleryImages[category.id] || [category.image];
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-background/95 backdrop-blur-xl animate-fade-up">
