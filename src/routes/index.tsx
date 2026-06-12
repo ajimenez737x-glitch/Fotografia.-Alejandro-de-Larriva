@@ -53,41 +53,41 @@ import retrato6 from "@/assets/retrato-6.jpg";
 import retrato7 from "@/assets/retrato-7.jpg";
 import retrato8 from "@/assets/retrato-8.jpg";
 
-import aboutCharo from "@/assets/about-charo.jpg";
+import aboutAlejandro from "@/assets/about-alejandro.jpg";
 import ctaBg from "@/assets/cta-bg.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Charo Sevilla Fotografía — Fotógrafa de bodas en Sevilla" },
-      { name: "description", content: "Fotógrafa freelance en Sevilla especializada en bodas, parejas y eventos. Reportajes emocionales, naturales y atemporales." },
-      { property: "og:title", content: "Charo Sevilla Fotografía — Bodas y eventos en Sevilla" },
-      { property: "og:description", content: "Reportajes emocionales de bodas y eventos en Sevilla." },
-      { property: "og:url", content: "https://charosevilla.com/" },
+      { title: "Alejandro de Larriva — Fotógrafo de bodas y eventos en Sevilla" },
+      { name: "description", content: "Fotógrafo profesional en Sevilla especializado en bodas, parejas, eventos y retratos. Reportajes creativos, naturales y atemporales." },
+      { property: "og:title", content: "Alejandro de Larriva — Fotografía de bodas y eventos en Sevilla" },
+      { property: "og:description", content: "Reportajes creativos de bodas y eventos en Sevilla. Profesional, cercano y con un estilo muy original." },
+      { property: "og:url", content: "https://fotografiadelarriva.com/" },
     ],
-    links: [{ rel: "canonical", href: "https://charosevilla.com/" }],
+    links: [{ rel: "canonical", href: "https://fotografiadelarriva.com/" }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
-          name: "Charo Sevilla Fotografía",
-          description: "Fotógrafa freelance en Sevilla especializada en bodas, parejas, eventos y reportajes emocionales.",
-          image: "https://charosevilla.com/og-image.jpg",
-          url: "https://charosevilla.com/",
+          name: "Alejandro de Larriva Fotografía",
+          description: "Fotógrafo profesional en Sevilla especializado en bodas, parejas, eventos, retratos y fotografía corporativa.",
+          image: "https://fotografiadelarriva.com/og-image.jpg",
+          url: "https://fotografiadelarriva.com/",
           areaServed: "Sevilla, España",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Calle Puerto del Escudo, 6",
+            streetAddress: "Calle Manuel Villalobos, 41, 3C",
             addressLocality: "Sevilla",
-            postalCode: "41006",
+            postalCode: "41009",
             addressCountry: "ES",
           },
           contactPoint: {
             "@type": "ContactPoint",
             contactType: "customer service",
-            telephone: "+34625660500",
+            telephone: "+34630033787",
             availableLanguage: ["Spanish"],
           },
         }),
@@ -132,17 +132,21 @@ const services = [
 ];
 
 const testimonials = [
-  { quote: "Además de ser una gran profesional es cercana. Supo interpretar lo que queríamos que se viera reflejado en el reportaje de nuestro enlace. Sacó fotos increíbles de momentos inolvidables y estamos muy agradecidos por ello. Capturó la esencia del día.", author: "Marta Lancharro", role: "Reportaje de Boda" },
-  { quote: "Con todo nuestro cariño y agradecimiento a nuestra querida fotógrafa Charo Sevilla que nos ha realizado un reportaje de bautizo de nuestro hijo tan maravilloso y espectacular que nos hizo emocionar el día que nos lo presentó... ¡Mil gracias Charo por inmortalizar un recuerdo único ya para siempre!", author: "Patricia Gutiérrez", role: "Reportaje de Bautizo" },
-  { quote: "No he podido hacer mejor elección para un día tan especial, la comunión de mi hijo. Profesional pero ante todo persona, me puse en sus manos y no me ha decepcionado, todo estupendo un trabajo perfecto.", author: "Macarena", role: "Reportaje de Comunión" },
-  { quote: "Mejor imposible. A mis dos hijas les ha hecho reportaje de comunión y ha hecho un trabajo espectacular, profesional con gran imaginación para sacar las mejores fotos. Se ve que disfruta con lo que hace.", author: "Juan Carlos", role: "Reportajes de Comunión" },
-  { quote: "Estamos encantados con la profesionalidad y sobre todo el resultado del trabajo. Su dedicación y esfuerzo se ha notado muchísimo, el álbum del bautizo de nuestra niña no puede ser más bonito. Gracias por todo el amor puesto en cada detalle.", author: "Eva M. BF", role: "Reportaje de Bautizo" },
-  { quote: "No hemos podido elegir mejor para que nos hiciera las fotos de bautizo de nuestro hijo. Estamos encantados con su trato profesional y personal, y ya si hablamos de cómo ha quedado el álbum... no tenemos palabras. Volveríamos a elegirte sin pensarlo.", author: "Jennifer Hernica", role: "Reportaje de Bautizo" },
-  { quote: "Estoy encantada tanto por el trato que hemos recibido como por cómo ha quedado el trabajo realizado, una auténtica pasada de fotos, álbum y vídeo de mis niñas en su bautizo. ¡Muchísimas gracias por todo!", author: "Mariné Oliva", role: "Reportaje de Bautizo" },
-  { quote: "Una palabra la define a ella y a su trabajo: PROFESIONAL. Sabe sacar lo mejor de cada uno en cada foto; me llevo un recuerdo precioso para siempre.", author: "Gracia Seda", role: "Sesión de Retrato" },
+  { quote: "Lo conocí en una boda y las fotos fueron una maravilla. Estuvimos un rato charlando y ademas de buena gente es un gran profesional, siempre atento en todo momento y muy cuidadoso con todo lo que hace. El día que me case será mi fotógrafo sin duda.", author: "Manuel Fraile Márquez", role: "Fotografía de Boda" },
+  { quote: "Siempre que tenemos algún evento del que queremos unos recuerdos bonitos, ya sea bautizos bodas, cumpleaños... contamos con su trabajo, súper profesional, te hace sentir muy cómodx delante de la cámara, se adapta a los gustos del cliente 100 por 100 y te da ideas muy creativas!!", author: "Pi", role: "Eventos y celebraciones" },
+  { quote: "Excelente profesional, lo recomiendo 100%. Hizo la boda de mi cuñada y quedaron unas fotos increíbles.", author: "Yolanda Prieto", role: "Reportaje de Boda" },
+  { quote: "Alejandro es muy atento y profesional, tiene un equipo con el que hace grandes obras de arte! Muy recomendable.", author: "Cristina González Díaz", role: "Fotografía profesional" },
+  { quote: "Ha hecho las fotos de dos amigos y me arrepiento de no haberlo conocido antes, tiene un estilo muy original y unos detalles muy chulos. Un crack!", author: "Elena González Díaz", role: "Sesiones fotográficas" },
+  { quote: "Simpatía y profesionalidad lo definen. Su fotografía es creativa y singular. Reportajes de bodas excelentes.", author: "Ana Jesús Gil", role: "Reportaje de Boda" },
+  { quote: "El mejor fotógrafo que he conocido. Impresionante y muy Profesional, sinceramente le doy un 10!!!", author: "Joselu Pine", role: "Fotografía profesional" },
+  { quote: "Es un fenómeno, super atento, tiene un gran equipo y muy buenas ideas. Lo recomiendo!!", author: "Rafael R", role: "Eventos y Bodas" },
+  { quote: "Muy profesional, gran sesión de fotos. Recomendable.", author: "Rebels Tarifa Kitesurf", role: "Sesión fotográfica" },
+  { quote: "Su talento y profesionalidad son la esencia del trabajo bien hecho.", author: "Raquel García", role: "Fotografía profesional" },
+  { quote: "Servicio amable, rápido y eficaz.", author: "Juliroler", role: "Sesión fotográfica" },
+  { quote: "Maravillosa manera de congelar momentos!", author: "Ana Boheme", role: "Fotografía artística" },
 ];
 
-const values = ["Cercanía", "Naturalidad", "Sensibilidad artística", "Atención al detalle", "Profesionalidad"];
+const values = ["Cercanía", "Creatividad", "Profesionalidad", "Atención al detalle", "Adaptación al cliente"];
 
 function useReveal() {
   useEffect(() => {
@@ -213,7 +217,7 @@ function Header() {
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 md:px-12">
         <a href="#top" className="font-display text-lg tracking-wide">
-          Charo<span className="text-gold">.</span>Sevilla
+          Fotografía<span className="text-gold">.</span> Alejandro de Larriva
         </a>
         <nav className="hidden items-center gap-9 text-sm text-muted-foreground md:flex">
           {links.map((l) => (
@@ -272,15 +276,15 @@ function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-background/50 via-transparent to-transparent" />
 
       <div className="relative z-10 mx-auto flex h-full max-w-[1400px] flex-col justify-end px-6 pb-24 md:px-12 md:pb-32">
-        <p className="eyebrow animate-fade-up delay-100">Fotografía de bodas y eventos</p>
+        <p className="eyebrow animate-fade-up delay-100">Fotografía de bodas y eventos en Sevilla</p>
         <h1 className="mt-6 max-w-4xl text-[clamp(2.5rem,6vw,5.5rem)] leading-[1.02] animate-fade-up delay-200">
-          <span className="sr-only">Charo Sevilla — Fotógrafa de bodas y eventos en Sevilla. </span>
-          Historias que merecen ser
-          <span className="font-serif-italic text-gold"> recordadas </span>
+          <span className="sr-only">Alejandro de Larriva — Fotógrafo de bodas y eventos en Sevilla. </span>
+          Momentos únicos que merecen ser
+          <span className="font-serif-italic text-gold"> recordados </span>
           para siempre.
         </h1>
         <p className="mt-7 max-w-xl text-base leading-relaxed text-muted-foreground animate-fade-up delay-300">
-          Capturo emociones reales, miradas irrepetibles y momentos auténticos para que vuelvas a sentirlos toda la vida.
+          Capturo emociones reales, miradas irrepetibles y momentos auténticos con un estilo creativo y muy personal.
         </p>
         <div className="mt-10 flex flex-wrap gap-4 animate-fade-up delay-400">
           <a
@@ -434,7 +438,7 @@ function About() {
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-20">
         <div className="reveal relative lg:col-span-5">
           <div className="relative aspect-[4/5] overflow-hidden">
-            <img src={aboutCharo} alt="Retrato de Charo" loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
+            <img src={aboutAlejandro} alt="Retrato de Alejandro de Larriva" loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
           </div>
           <div className="pointer-events-none absolute -bottom-6 -right-6 hidden h-40 w-40 border border-gold/60 md:block" />
         </div>
@@ -442,12 +446,12 @@ function About() {
         <div className="reveal lg:col-span-7 flex flex-col justify-center">
           <p className="eyebrow">Sobre mí</p>
           <h2 className="mt-5 text-[clamp(2rem,4vw,3.5rem)] leading-[1.05]">
-            Hola, soy <span className="font-serif-italic text-gold">Charo</span>
+            Hola, soy <span className="font-serif-italic text-gold">Alejandro</span>
           </h2>
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground">
             Creo que las mejores fotografías son aquellas que consiguen detener el tiempo.
             Mi trabajo consiste en capturar emociones auténticas y convertirlas en recuerdos
-            que permanecerán para siempre.
+            que permanecerán para siempre, con un estilo creativo, original y muy personal.
           </p>
 
           <ul className="mt-10 grid grid-cols-2 gap-x-8 gap-y-4 max-w-lg md:grid-cols-3">
@@ -460,8 +464,8 @@ function About() {
           </ul>
 
           <div className="mt-12 grid grid-cols-3 gap-6 border-t border-border pt-10 max-w-xl">
-            <Stat n="+100" label="Sesiones realizadas" />
-            <Stat n="+50"  label="Bodas documentadas" />
+            <Stat n="+200" label="Sesiones realizadas" />
+            <Stat n="+80"  label="Bodas documentadas" />
             <Stat n="100%" label="Clientes en Andalucía" />
           </div>
         </div>
@@ -629,20 +633,20 @@ function Contact() {
           <dl className="mt-12 space-y-7 text-sm">
             <div>
               <dt className="text-[0.7rem] tracking-[0.35em] uppercase text-gold">Email</dt>
-              <dd className="mt-2"><a href="mailto:infocharosevillafotografia@gmail.com" className="link-underline">infocharosevillafotografia@gmail.com</a></dd>
+              <dd className="mt-2"><a href="mailto:info@fotografiadelarriva.com" className="link-underline">info@fotografiadelarriva.com</a></dd>
             </div>
             <div>
               <dt className="text-[0.7rem] tracking-[0.35em] uppercase text-gold">WhatsApp / Móvil</dt>
-              <dd className="mt-2"><a href="https://wa.me/34625660500" target="_blank" rel="noopener" className="link-underline">+34 625 66 05 00</a></dd>
+              <dd className="mt-2"><a href="https://wa.me/34630033787" target="_blank" rel="noopener" className="link-underline">+34 630 03 37 87</a></dd>
             </div>
             <div>
-              <dt className="text-[0.7rem] tracking-[0.35em] uppercase text-gold">Teléfono Fijo</dt>
-              <dd className="mt-2"><a href="tel:+34954631684" className="link-underline">954 63 16 84</a></dd>
+              <dt className="text-[0.7rem] tracking-[0.35em] uppercase text-gold">Web</dt>
+              <dd className="mt-2"><a href="https://fotografiadelarriva.com" target="_blank" rel="noopener" className="link-underline">fotografiadelarriva.com</a></dd>
             </div>
             <div>
               <dt className="text-[0.7rem] tracking-[0.35em] uppercase text-gold">Dirección / Estudio</dt>
               <dd className="mt-2 text-muted-foreground">
-                Calle Puerto del Escudo, 6, 41006 Sevilla<br />
+                Calle Manuel Villalobos, 41, 3C, 41009 Sevilla<br />
                 <span className="text-[0.75rem] text-muted-foreground/75">Disponible en toda Andalucía y España</span>
               </dd>
             </div>
@@ -679,12 +683,12 @@ function Contact() {
             </div>
             
             <p className="text-sm leading-relaxed text-muted-foreground max-w-xl">
-              Si prefieres una atención inmediata y sin rodeos, pulsa el botón de abajo para escribirme por WhatsApp. Estaré encantada de responder tus preguntas y darte un presupuesto a medida.
+              Si prefieres una atención inmediata y sin rodeos, pulsa el botón de abajo para escribirme por WhatsApp. Estaré encantado de responder tus preguntas y darte un presupuesto a medida.
             </p>
             
             <div>
               <a
-                href="https://wa.me/34625660500"
+                href="https://wa.me/34630033787"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-4 border border-gold/50 px-8 py-5 text-xs tracking-[0.32em] uppercase text-gold hover:bg-gold hover:text-gold-foreground transition-all duration-500"
@@ -708,10 +712,10 @@ function Footer() {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:items-end">
           <div>
             <a href="#top" className="font-display text-2xl">
-              Charo<span className="text-gold">.</span>Sevilla
+              Fotografía<span className="text-gold">.</span> Alejandro de Larriva
             </a>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground leading-relaxed">
-              Fotografía emocional de bodas y eventos en Sevilla y toda Andalucía.
+              Fotografía profesional de bodas y eventos en Sevilla y toda Andalucía.
             </p>
           </div>
 
@@ -724,15 +728,15 @@ function Footer() {
           </nav>
 
           <div className="flex flex-wrap gap-5 md:justify-end text-xs tracking-[0.3em] uppercase">
-            <a href="https://www.instagram.com/charosevillawedding/" target="_blank" rel="noopener" className="text-muted-foreground hover:text-gold transition-colors">Instagram (Boda)</a>
-            <a href="https://www.instagram.com/charosevillafotografia/" target="_blank" rel="noopener" className="text-muted-foreground hover:text-gold transition-colors">Instagram (Familia)</a>
-            <a href="https://www.facebook.com/CharoSevillaFotografia" target="_blank" rel="noopener" className="text-muted-foreground hover:text-gold transition-colors">Facebook</a>
+            <a href="https://www.instagram.com/fotografiadelarriva/" target="_blank" rel="noopener" className="text-muted-foreground hover:text-gold transition-colors">Instagram</a>
+            <a href="https://www.facebook.com/fotografiadelarriva" target="_blank" rel="noopener" className="text-muted-foreground hover:text-gold transition-colors">Facebook</a>
+            <a href="https://fotografiadelarriva.com" target="_blank" rel="noopener" className="text-muted-foreground hover:text-gold transition-colors">Web oficial</a>
           </div>
         </div>
 
         <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-border pt-8 text-xs text-muted-foreground md:flex-row md:items-center">
-          <p>© {new Date().getFullYear()} Charo Sevilla Fotografía. Todos los derechos reservados.</p>
-          <p className="font-serif-italic">Hecho con cariño en Sevilla.</p>
+          <p>© {new Date().getFullYear()} Alejandro de Larriva Fotografía. Todos los derechos reservados.</p>
+          <p className="font-serif-italic">Hecho con pasión en Sevilla.</p>
         </div>
       </div>
     </footer>

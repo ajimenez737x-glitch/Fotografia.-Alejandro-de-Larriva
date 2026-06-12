@@ -73,9 +73,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { name: "author", content: "Charo Sevilla Fotografía" },
+      { name: "author", content: "Alejandro de Larriva Fotografía" },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Charo Sevilla Fotografía" },
+      { property: "og:site_name", content: "Alejandro de Larriva Fotografía" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     scripts: [
@@ -84,8 +84,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          name: "Charo Sevilla Fotografía",
-          url: "https://charosevilla.com",
+          name: "Alejandro de Larriva Fotografía",
+          url: "https://fotografiadelarriva.com",
         }),
       },
     ],
@@ -105,7 +105,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <HeadContent />
       </head>
