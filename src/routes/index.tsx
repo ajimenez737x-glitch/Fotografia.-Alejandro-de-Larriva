@@ -7,6 +7,16 @@ import galleryParejas from "@/assets/gallery-parejas.jpg";
 import galleryEventos from "@/assets/gallery-eventos.jpg";
 import galleryFamilia from "@/assets/gallery-familia.jpg";
 import galleryRetratos from "@/assets/gallery-retratos.jpg";
+import boda1 from "@/assets/boda-1.jpg";
+import boda2 from "@/assets/boda-2.jpg";
+import pareja1 from "@/assets/pareja-1.jpg";
+import pareja2 from "@/assets/pareja-2.jpg";
+import evento1 from "@/assets/evento-1.jpg";
+import evento2 from "@/assets/evento-2.jpg";
+import familia1 from "@/assets/familia-1.jpg";
+import familia2 from "@/assets/familia-2.jpg";
+import retrato1 from "@/assets/retrato-1.jpg";
+import retrato2 from "@/assets/retrato-2.jpg";
 import aboutCharo from "@/assets/about-charo.jpg";
 import ctaBg from "@/assets/cta-bg.jpg";
 
@@ -39,6 +49,14 @@ const categories: Category[] = [
   { id: "familia",  title: "Familia",  subtitle: "Momentos familiares auténticos",           image: galleryFamilia,  count: "04" },
   { id: "retratos", title: "Retratos", subtitle: "Retratos artísticos y personales",         image: galleryRetratos, count: "05" },
 ];
+
+const galleryImages: Record<string, string[]> = {
+  bodas:    [galleryBodas,    boda1,    boda2,    pareja1, evento1],
+  parejas:  [galleryParejas,  pareja1,  pareja2,  boda1,   familia1],
+  eventos:  [galleryEventos,  evento1,  evento2,  boda2,   familia2],
+  familia:  [galleryFamilia,  familia1, familia2, pareja2, retrato1],
+  retratos: [galleryRetratos, retrato1, retrato2, evento2, boda1],
+};
 
 const services = [
   { title: "Fotografía de bodas",     desc: "Cobertura completa del día. Reportaje narrativo y emocional desde los preparativos hasta el último baile." },
@@ -306,8 +324,7 @@ function Lightbox({ category, onClose }: { category: Category; onClose: () => vo
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
 
-  // Show variations using the category image plus siblings for richness
-  const images = [category.image, ...categories.filter((c) => c.id !== category.id).map((c) => c.image)];
+  const images = galleryImages[category.id] || [category.image];
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-background/95 backdrop-blur-xl animate-fade-up">
