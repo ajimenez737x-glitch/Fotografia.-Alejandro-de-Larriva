@@ -221,6 +221,7 @@ function Hero() {
         alt="Pareja de novios al atardecer en Sevilla"
         width={1920}
         height={1280}
+        fetchPriority="high"
         className="absolute inset-0 h-full w-full object-cover animate-hero-zoom"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background/90" />
@@ -229,6 +230,7 @@ function Hero() {
       <div className="relative z-10 mx-auto flex h-full max-w-[1400px] flex-col justify-end px-6 pb-24 md:px-12 md:pb-32">
         <p className="eyebrow animate-fade-up delay-100">Fotografía de bodas y eventos</p>
         <h1 className="mt-6 max-w-4xl text-[clamp(2.5rem,6vw,5.5rem)] leading-[1.02] animate-fade-up delay-200">
+          <span className="sr-only">Charo Sevilla — Fotógrafa de bodas y eventos en Sevilla. </span>
           Historias que merecen ser
           <span className="font-serif-italic text-gold"> recordadas </span>
           para siempre.
