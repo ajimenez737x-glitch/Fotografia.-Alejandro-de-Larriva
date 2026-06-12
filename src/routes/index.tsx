@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useEffect, useState } from "react";
 
 import heroWedding from "@/assets/hero-wedding.jpg";
 import galleryBodas from "@/assets/gallery-bodas.jpg";
@@ -9,14 +9,50 @@ import galleryFamilia from "@/assets/gallery-familia.jpg";
 import galleryRetratos from "@/assets/gallery-retratos.jpg";
 import boda1 from "@/assets/boda-1.jpg";
 import boda2 from "@/assets/boda-2.jpg";
+import boda3 from "@/assets/boda-3.jpg";
 import pareja1 from "@/assets/pareja-1.jpg";
 import pareja2 from "@/assets/pareja-2.jpg";
+import pareja3 from "@/assets/pareja-3.jpg";
 import evento1 from "@/assets/evento-1.jpg";
 import evento2 from "@/assets/evento-2.jpg";
+import evento3 from "@/assets/evento-3.jpg";
 import familia1 from "@/assets/familia-1.jpg";
 import familia2 from "@/assets/familia-2.jpg";
+import familia3 from "@/assets/familia-3.jpg";
 import retrato1 from "@/assets/retrato-1.jpg";
 import retrato2 from "@/assets/retrato-2.jpg";
+import retrato3 from "@/assets/retrato-3.jpg";
+
+import boda4 from "@/assets/boda-4.jpg";
+import boda5 from "@/assets/boda-5.jpg";
+import boda6 from "@/assets/boda-6.jpg";
+import boda7 from "@/assets/boda-7.jpg";
+import boda8 from "@/assets/boda-8.jpg";
+
+import pareja4 from "@/assets/pareja-4.jpg";
+import pareja5 from "@/assets/pareja-5.jpg";
+import pareja6 from "@/assets/pareja-6.jpg";
+import pareja7 from "@/assets/pareja-7.jpg";
+import pareja8 from "@/assets/pareja-8.jpg";
+
+import evento4 from "@/assets/evento-4.jpg";
+import evento5 from "@/assets/evento-5.jpg";
+import evento6 from "@/assets/evento-6.jpg";
+import evento7 from "@/assets/evento-7.jpg";
+import evento8 from "@/assets/evento-8.jpg";
+
+import familia4 from "@/assets/familia-4.jpg";
+import familia5 from "@/assets/familia-5.jpg";
+import familia6 from "@/assets/familia-6.jpg";
+import familia7 from "@/assets/familia-7.jpg";
+import familia8 from "@/assets/familia-8.jpg";
+
+import retrato4 from "@/assets/retrato-4.jpg";
+import retrato5 from "@/assets/retrato-5.jpg";
+import retrato6 from "@/assets/retrato-6.jpg";
+import retrato7 from "@/assets/retrato-7.jpg";
+import retrato8 from "@/assets/retrato-8.jpg";
+
 import aboutCharo from "@/assets/about-charo.jpg";
 import ctaBg from "@/assets/cta-bg.jpg";
 
@@ -27,9 +63,9 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Fotógrafa freelance en Sevilla especializada en bodas, parejas y eventos. Reportajes emocionales, naturales y atemporales." },
       { property: "og:title", content: "Charo Sevilla Fotografía — Bodas y eventos en Sevilla" },
       { property: "og:description", content: "Reportajes emocionales de bodas y eventos en Sevilla." },
-      { property: "og:url", content: "https://charo-sevilla-emotions.lovable.app/" },
+      { property: "og:url", content: "https://charosevilla.com/" },
     ],
-    links: [{ rel: "canonical", href: "https://charo-sevilla-emotions.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://charosevilla.com/" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -38,18 +74,20 @@ export const Route = createFileRoute("/")({
           "@type": "ProfessionalService",
           name: "Charo Sevilla Fotografía",
           description: "Fotógrafa freelance en Sevilla especializada en bodas, parejas, eventos y reportajes emocionales.",
-          image: "https://charo-sevilla-emotions.lovable.app/og-image.jpg",
-          url: "https://charo-sevilla-emotions.lovable.app/",
+          image: "https://charosevilla.com/og-image.jpg",
+          url: "https://charosevilla.com/",
           areaServed: "Sevilla, España",
           address: {
             "@type": "PostalAddress",
+            streetAddress: "Calle Puerto del Escudo, 6",
             addressLocality: "Sevilla",
+            postalCode: "41006",
             addressCountry: "ES",
           },
           contactPoint: {
             "@type": "ContactPoint",
             contactType: "customer service",
-            telephone: "+34600000000",
+            telephone: "+34625660500",
             availableLanguage: ["Spanish"],
           },
         }),
@@ -77,11 +115,11 @@ const categories: Category[] = [
 ];
 
 const galleryImages: Record<string, string[]> = {
-  bodas:    [galleryBodas,    boda1,    boda2,    pareja1, evento1],
-  parejas:  [galleryParejas,  pareja1,  pareja2,  boda1,   familia1],
-  eventos:  [galleryEventos,  evento1,  evento2,  boda2,   familia2],
-  familia:  [galleryFamilia,  familia1, familia2, pareja2, retrato1],
-  retratos: [galleryRetratos, retrato1, retrato2, evento2, boda1],
+  bodas:    [galleryBodas,    boda1,    boda2,    boda3,    boda4,    boda5,    boda6,    boda7,    boda8],
+  parejas:  [galleryParejas,  pareja1,  pareja2,  pareja3,  pareja4,  pareja5,  pareja6,  pareja7,  pareja8],
+  eventos:  [galleryEventos,  evento1,  evento2,  evento3,  evento4,  evento5,  evento6,  evento7,  evento8],
+  familia:  [galleryFamilia,  familia1, familia2, familia3, familia4, familia5, familia6, familia7, familia8],
+  retratos: [galleryRetratos, retrato1, retrato2, retrato3, retrato4, retrato5, retrato6, retrato7, retrato8],
 };
 
 const services = [
@@ -90,12 +128,18 @@ const services = [
   { title: "Eventos corporativos",    desc: "Empresas, marcas y experiencias documentadas con mirada editorial." },
   { title: "Sesiones de pareja",      desc: "Reportajes románticos en localizaciones únicas de Sevilla y Andalucía." },
   { title: "Retratos profesionales",  desc: "Marca personal, fotografía artística y retrato editorial." },
+  { title: "Sesiones familiares",     desc: "Maternidad, recién nacidos y momentos espontáneos en familia llenos de naturalidad." },
 ];
 
 const testimonials = [
-  { quote: "Las fotografías superaron todas nuestras expectativas. Cada imagen nos devuelve a ese día.", author: "Lucía & Álvaro", role: "Boda en Sevilla" },
-  { quote: "Consiguió capturar cada emoción de nuestro día sin que apenas la notáramos.", author: "María & Pablo", role: "Boda en Carmona" },
-  { quote: "Profesional, cercana y con una sensibilidad increíble. Volveríamos a elegirla mil veces.", author: "Familia Romero", role: "Sesión familiar" },
+  { quote: "Además de ser una gran profesional es cercana. Supo interpretar lo que queríamos que se viera reflejado en el reportaje de nuestro enlace. Sacó fotos increíbles de momentos inolvidables y estamos muy agradecidos por ello. Capturó la esencia del día.", author: "Marta Lancharro", role: "Reportaje de Boda" },
+  { quote: "Con todo nuestro cariño y agradecimiento a nuestra querida fotógrafa Charo Sevilla que nos ha realizado un reportaje de bautizo de nuestro hijo tan maravilloso y espectacular que nos hizo emocionar el día que nos lo presentó... ¡Mil gracias Charo por inmortalizar un recuerdo único ya para siempre!", author: "Patricia Gutiérrez", role: "Reportaje de Bautizo" },
+  { quote: "No he podido hacer mejor elección para un día tan especial, la comunión de mi hijo. Profesional pero ante todo persona, me puse en sus manos y no me ha decepcionado, todo estupendo un trabajo perfecto.", author: "Macarena", role: "Reportaje de Comunión" },
+  { quote: "Mejor imposible. A mis dos hijas les ha hecho reportaje de comunión y ha hecho un trabajo espectacular, profesional con gran imaginación para sacar las mejores fotos. Se ve que disfruta con lo que hace.", author: "Juan Carlos", role: "Reportajes de Comunión" },
+  { quote: "Estamos encantados con la profesionalidad y sobre todo el resultado del trabajo. Su dedicación y esfuerzo se ha notado muchísimo, el álbum del bautizo de nuestra niña no puede ser más bonito. Gracias por todo el amor puesto en cada detalle.", author: "Eva M. BF", role: "Reportaje de Bautizo" },
+  { quote: "No hemos podido elegir mejor para que nos hiciera las fotos de bautizo de nuestro hijo. Estamos encantados con su trato profesional y personal, y ya si hablamos de cómo ha quedado el álbum... no tenemos palabras. Volveríamos a elegirte sin pensarlo.", author: "Jennifer Hernica", role: "Reportaje de Bautizo" },
+  { quote: "Estoy encantada tanto por el trato que hemos recibido como por cómo ha quedado el trabajo realizado, una auténtica pasada de fotos, álbum y vídeo de mis niñas en su bautizo. ¡Muchísimas gracias por todo!", author: "Mariné Oliva", role: "Reportaje de Bautizo" },
+  { quote: "Una palabra la define a ella y a su trabajo: PROFESIONAL. Sabe sacar lo mejor de cada uno en cada foto; me llevo un recuerdo precioso para siempre.", author: "Gracia Seda", role: "Sesión de Retrato" },
 ];
 
 const values = ["Cercanía", "Naturalidad", "Sensibilidad artística", "Atención al detalle", "Profesionalidad"];
@@ -256,7 +300,6 @@ function Hero() {
       </div>
 
       <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 flex flex-col items-center gap-3">
-        <span className="text-[0.65rem] tracking-[0.4em] uppercase text-muted-foreground">Scroll</span>
         <div className="relative h-12 w-px overflow-hidden bg-foreground/15">
           <span className="absolute inset-x-0 top-0 h-1/2 bg-gold animate-scroll-cue" />
         </div>
@@ -477,9 +520,18 @@ function Services() {
 function Testimonials() {
   const [i, setI] = useState(0);
   useEffect(() => {
-    const id = setInterval(() => setI((v) => (v + 1) % testimonials.length), 6500);
+    const id = setInterval(() => setI((v) => (v + 1) % testimonials.length), 8500);
     return () => clearInterval(id);
   }, []);
+
+  const handlePrev = () => {
+    setI((v) => (v - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const handleNext = () => {
+    setI((v) => (v + 1) % testimonials.length);
+  };
+
   const t = testimonials[i];
 
   return (
@@ -488,19 +540,37 @@ function Testimonials() {
         <div className="absolute -left-20 top-10 font-display text-[20rem] text-gold leading-none">"</div>
       </div>
 
-      <div className="relative mx-auto max-w-3xl text-center">
+      <div className="relative mx-auto max-w-4xl text-center">
         <p className="eyebrow">Testimonios</p>
         <div className="mt-4 flex justify-center gap-1 text-gold">
           {Array.from({ length: 5 }).map((_, k) => <span key={k}>★</span>)}
         </div>
 
-        <blockquote key={i} className="mt-10 animate-fade-up">
-          <p className="font-display text-2xl md:text-4xl leading-snug">"{t.quote}"</p>
-          <footer className="mt-10">
-            <div className="text-sm tracking-[0.3em] uppercase text-gold">{t.author}</div>
-            <div className="mt-2 text-xs text-muted-foreground">{t.role}</div>
-          </footer>
-        </blockquote>
+        <div className="relative mt-12 flex items-center justify-between gap-4 md:gap-10">
+          <button
+            onClick={handlePrev}
+            aria-label="Testimonio anterior"
+            className="group flex h-12 w-12 shrink-0 items-center justify-center border border-foreground/10 hover:border-gold rounded-full text-muted-foreground hover:text-gold transition-colors duration-300"
+          >
+            <span className="text-xl transition-transform duration-300 group-hover:-translate-x-0.5">←</span>
+          </button>
+
+          <blockquote key={i} className="flex-1 animate-fade-up px-2 md:px-6">
+            <p className="font-display text-lg sm:text-2xl md:text-3xl leading-snug">"{t.quote}"</p>
+            <footer className="mt-8">
+              <div className="text-sm tracking-[0.3em] uppercase text-gold">{t.author}</div>
+              <div className="mt-2 text-xs text-muted-foreground">{t.role}</div>
+            </footer>
+          </blockquote>
+
+          <button
+            onClick={handleNext}
+            aria-label="Siguiente testimonio"
+            className="group flex h-12 w-12 shrink-0 items-center justify-center border border-foreground/10 hover:border-gold rounded-full text-muted-foreground hover:text-gold transition-colors duration-300"
+          >
+            <span className="text-xl transition-transform duration-300 group-hover:translate-x-0.5">→</span>
+          </button>
+        </div>
 
         <div className="mt-12 flex justify-center gap-3">
           {testimonials.map((_, k) => (
@@ -544,26 +614,6 @@ function CTA() {
 }
 
 function Contact() {
-  const [sent, setSent] = useState(false);
-  const formRef = useRef<HTMLFormElement>(null);
-
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const name = String(data.get("name") ?? "").trim();
-    const tipo = String(data.get("tipo") ?? "").trim();
-    const fecha = String(data.get("fecha") ?? "").trim();
-    const msg = String(data.get("mensaje") ?? "").trim();
-    const email = String(data.get("email") ?? "").trim();
-    const tel = String(data.get("telefono") ?? "").trim();
-    const text = encodeURIComponent(
-      `Hola Charo, soy ${name}.\n\nTipo de sesión: ${tipo}\nFecha: ${fecha}\nEmail: ${email}\nTel: ${tel}\n\n${msg}`,
-    );
-    window.open(`https://wa.me/34600000000?text=${text}`, "_blank", "noopener");
-    setSent(true);
-    formRef.current?.reset();
-  };
-
   return (
     <section id="contacto" className="px-6 py-28 md:px-12 md:py-40">
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-16 lg:grid-cols-12">
@@ -579,75 +629,77 @@ function Contact() {
           <dl className="mt-12 space-y-7 text-sm">
             <div>
               <dt className="text-[0.7rem] tracking-[0.35em] uppercase text-gold">Email</dt>
-              <dd className="mt-2"><a href="mailto:hola@charosevilla.com" className="link-underline">hola@charosevilla.com</a></dd>
+              <dd className="mt-2"><a href="mailto:infocharosevillafotografia@gmail.com" className="link-underline">infocharosevillafotografia@gmail.com</a></dd>
             </div>
             <div>
-              <dt className="text-[0.7rem] tracking-[0.35em] uppercase text-gold">WhatsApp</dt>
-              <dd className="mt-2"><a href="https://wa.me/34600000000" target="_blank" rel="noopener" className="link-underline">+34 600 000 000</a></dd>
+              <dt className="text-[0.7rem] tracking-[0.35em] uppercase text-gold">WhatsApp / Móvil</dt>
+              <dd className="mt-2"><a href="https://wa.me/34625660500" target="_blank" rel="noopener" className="link-underline">+34 625 66 05 00</a></dd>
             </div>
             <div>
-              <dt className="text-[0.7rem] tracking-[0.35em] uppercase text-gold">Ubicación</dt>
-              <dd className="mt-2 text-muted-foreground">Sevilla, España — disponible en toda Andalucía</dd>
+              <dt className="text-[0.7rem] tracking-[0.35em] uppercase text-gold">Teléfono Fijo</dt>
+              <dd className="mt-2"><a href="tel:+34954631684" className="link-underline">954 63 16 84</a></dd>
+            </div>
+            <div>
+              <dt className="text-[0.7rem] tracking-[0.35em] uppercase text-gold">Dirección / Estudio</dt>
+              <dd className="mt-2 text-muted-foreground">
+                Calle Puerto del Escudo, 6, 41006 Sevilla<br />
+                <span className="text-[0.75rem] text-muted-foreground/75">Disponible en toda Andalucía y España</span>
+              </dd>
+            </div>
+            <div>
+              <dt className="text-[0.7rem] tracking-[0.35em] uppercase text-gold">Horarios de atención</dt>
+              <dd className="mt-2 text-muted-foreground">
+                Lunes a Viernes: 10:00 - 19:00<br />
+                Sábado y Domingo: 09:00 - 18:00
+              </dd>
             </div>
           </dl>
         </div>
 
-        <form ref={formRef} onSubmit={onSubmit} className="reveal lg:col-span-7 grid grid-cols-1 gap-7 md:grid-cols-2">
-          <Field label="Nombre"      name="name"     type="text"     required />
-          <Field label="Email"       name="email"    type="email"    required />
-          <Field label="Teléfono"    name="telefono" type="tel" />
-          <Field label="Tipo de sesión" name="tipo" as="select">
-            <option value="">Elige una opción</option>
-            <option>Boda</option>
-            <option>Pareja</option>
-            <option>Evento privado</option>
-            <option>Evento corporativo</option>
-            <option>Familia</option>
-            <option>Retrato</option>
-          </Field>
-          <Field label="Fecha del evento" name="fecha" type="date" className="md:col-span-2" />
-          <Field label="Cuéntame más" name="mensaje" as="textarea" className="md:col-span-2" />
-
-          <div className="md:col-span-2 flex flex-col items-start gap-5 pt-2">
-            <button
-              type="submit"
-              className="group inline-flex items-center gap-3 bg-gold px-8 py-4 text-xs tracking-[0.32em] uppercase text-gold-foreground hover:-translate-y-0.5 transition-transform duration-500"
-            >
-              Enviar consulta
-              <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>
-            </button>
-            {sent && (
-              <p className="text-xs tracking-[0.25em] uppercase text-gold animate-fade-up">
-                Gracias — abrimos WhatsApp para finalizar tu mensaje.
-              </p>
-            )}
+        <div className="reveal lg:col-span-7 relative overflow-hidden bg-gradient-to-br from-card to-background border border-border p-10 md:p-14 hover:border-gold/30 transition-all duration-500">
+          {/* Subtle glowing accent */}
+          <div className="pointer-events-none absolute -right-24 -top-24 h-48 w-48 rounded-full bg-gold/5 blur-[80px]" />
+          
+          <div className="flex flex-col gap-8">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-5">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gold/10 text-gold border border-gold/20">
+                <svg className="h-6 w-6 fill-current" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                </svg>
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <span className="text-[0.6rem] font-semibold tracking-[0.3em] uppercase text-gold/80 flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  Atención directa por chat
+                </span>
+                <h3 className="font-display text-2xl md:text-3.5xl">
+                  ¿Hablamos <span className="font-serif-italic text-gold">directamente</span>?
+                </h3>
+              </div>
+            </div>
+            
+            <p className="text-sm leading-relaxed text-muted-foreground max-w-xl">
+              Si prefieres una atención inmediata y sin rodeos, pulsa el botón de abajo para escribirme por WhatsApp. Estaré encantada de responder tus preguntas y darte un presupuesto a medida.
+            </p>
+            
+            <div>
+              <a
+                href="https://wa.me/34625660500"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-4 border border-gold/50 px-8 py-5 text-xs tracking-[0.32em] uppercase text-gold hover:bg-gold hover:text-gold-foreground transition-all duration-500"
+              >
+                Contactar por WhatsApp
+                <span className="transition-transform duration-500 group-hover:translate-x-1.5">→</span>
+              </a>
+            </div>
           </div>
-        </form>
+        </div>
       </div>
     </section>
   );
 }
 
-function Field({
-  label, name, type = "text", required, className, as, children,
-}: {
-  label: string; name: string; type?: string; required?: boolean; className?: string;
-  as?: "select" | "textarea"; children?: React.ReactNode;
-}) {
-  const base = "w-full bg-transparent border-b border-border focus:border-gold focus:outline-none py-3 text-sm placeholder-muted-foreground transition-colors";
-  return (
-    <label className={`flex flex-col gap-2 ${className ?? ""}`}>
-      <span className="text-[0.65rem] tracking-[0.35em] uppercase text-muted-foreground">{label}{required && " *"}</span>
-      {as === "textarea" ? (
-        <textarea name={name} required={required} rows={4} className={base} />
-      ) : as === "select" ? (
-        <select name={name} required={required} className={`${base} appearance-none bg-background`}>{children}</select>
-      ) : (
-        <input name={name} type={type} required={required} className={base} />
-      )}
-    </label>
-  );
-}
 
 function Footer() {
   return (
@@ -671,10 +723,10 @@ function Footer() {
             <a href="#contacto"    className="link-underline hover:text-foreground">Contacto</a>
           </nav>
 
-          <div className="flex gap-5 md:justify-end text-xs tracking-[0.3em] uppercase">
-            <a href="#" className="text-muted-foreground hover:text-gold transition-colors">Instagram</a>
-            <a href="#" className="text-muted-foreground hover:text-gold transition-colors">Facebook</a>
-            <a href="#" className="text-muted-foreground hover:text-gold transition-colors">Pinterest</a>
+          <div className="flex flex-wrap gap-5 md:justify-end text-xs tracking-[0.3em] uppercase">
+            <a href="https://www.instagram.com/charosevillawedding/" target="_blank" rel="noopener" className="text-muted-foreground hover:text-gold transition-colors">Instagram (Boda)</a>
+            <a href="https://www.instagram.com/charosevillafotografia/" target="_blank" rel="noopener" className="text-muted-foreground hover:text-gold transition-colors">Instagram (Familia)</a>
+            <a href="https://www.facebook.com/CharoSevillaFotografia" target="_blank" rel="noopener" className="text-muted-foreground hover:text-gold transition-colors">Facebook</a>
           </div>
         </div>
 
