@@ -77,17 +77,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Charo Sevilla Fotografía — Fotógrafa de bodas y eventos en Sevilla" },
-      { name: "description", content: "Fotógrafa freelance en Sevilla especializada en bodas, parejas y eventos. Reportajes emocionales y atemporales que capturan la verdad de cada historia." },
       { name: "author", content: "Charo Sevilla Fotografía" },
-      { property: "og:title", content: "Charo Sevilla Fotografía — Fotógrafa de bodas y eventos en Sevilla" },
-      { property: "og:description", content: "Fotógrafa freelance en Sevilla especializada en bodas, parejas y eventos. Reportajes emocionales y atemporales que capturan la verdad de cada historia." },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Charo Sevilla Fotografía" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Charo Sevilla Fotografía — Fotógrafa de bodas y eventos en Sevilla" },
-      { name: "twitter:description", content: "Fotógrafa freelance en Sevilla especializada en bodas, parejas y eventos. Reportajes emocionales y atemporales que capturan la verdad de cada historia." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4c03387e-6192-47ec-82fe-057376696e2b/id-preview-80e2c803--afc3ada1-33ff-412c-8bae-f6ddfdd3c6fb.lovable.app-1781274825713.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4c03387e-6192-47ec-82fe-057376696e2b/id-preview-80e2c803--afc3ada1-33ff-412c-8bae-f6ddfdd3c6fb.lovable.app-1781274825713.png" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Charo Sevilla Fotografía",
+          url: "https://charo-sevilla-emotions.lovable.app",
+        }),
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

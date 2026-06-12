@@ -27,9 +27,34 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Fotógrafa freelance en Sevilla especializada en bodas, parejas y eventos. Reportajes emocionales, naturales y atemporales." },
       { property: "og:title", content: "Charo Sevilla Fotografía — Bodas y eventos en Sevilla" },
       { property: "og:description", content: "Reportajes emocionales de bodas y eventos en Sevilla." },
-      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://charo-sevilla-emotions.lovable.app/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://charo-sevilla-emotions.lovable.app/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: "Charo Sevilla Fotografía",
+          description: "Fotógrafa freelance en Sevilla especializada en bodas, parejas, eventos y reportajes emocionales.",
+          image: "https://charo-sevilla-emotions.lovable.app/og-image.jpg",
+          url: "https://charo-sevilla-emotions.lovable.app/",
+          areaServed: "Sevilla, España",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Sevilla",
+            addressCountry: "ES",
+          },
+          contactPoint: {
+            "@type": "ContactPoint",
+            contactType: "customer service",
+            telephone: "+34600000000",
+            availableLanguage: ["Spanish"],
+          },
+        }),
+      },
+    ],
   }),
   component: Index,
 });
@@ -39,15 +64,16 @@ type Category = {
   title: string;
   subtitle: string;
   image: string;
+  alt: string;
   count: string;
 };
 
 const categories: Category[] = [
-  { id: "bodas",    title: "Bodas",    subtitle: "Ceremonias, preparativos y celebraciones", image: galleryBodas,    count: "01" },
-  { id: "parejas",  title: "Parejas",  subtitle: "Sesiones románticas y naturales",          image: galleryParejas,  count: "02" },
-  { id: "eventos",  title: "Eventos",  subtitle: "Privados, corporativos y celebraciones",   image: galleryEventos,  count: "03" },
-  { id: "familia",  title: "Familia",  subtitle: "Momentos familiares auténticos",           image: galleryFamilia,  count: "04" },
-  { id: "retratos", title: "Retratos", subtitle: "Retratos artísticos y personales",         image: galleryRetratos, count: "05" },
+  { id: "bodas",    title: "Bodas",    subtitle: "Ceremonias, preparativos y celebraciones", image: galleryBodas,    alt: "Reportajes de bodas en Sevilla",            count: "01" },
+  { id: "parejas",  title: "Parejas",  subtitle: "Sesiones románticas y naturales",          image: galleryParejas,  alt: "Sesiones de parejas en Sevilla",            count: "02" },
+  { id: "eventos",  title: "Eventos",  subtitle: "Privados, corporativos y celebraciones",   image: galleryEventos,  alt: "Fotografía de eventos privados y corporativos", count: "03" },
+  { id: "familia",  title: "Familia",  subtitle: "Momentos familiares auténticos",           image: galleryFamilia,  alt: "Sesiones familiares en Sevilla",            count: "04" },
+  { id: "retratos", title: "Retratos", subtitle: "Retratos artísticos y personales",         image: galleryRetratos, alt: "Retratos artísticos y editoriales",         count: "05" },
 ];
 
 const galleryImages: Record<string, string[]> = {
@@ -195,6 +221,7 @@ function Hero() {
         alt="Pareja de novios al atardecer en Sevilla"
         width={1920}
         height={1280}
+        fetchPriority="high"
         className="absolute inset-0 h-full w-full object-cover animate-hero-zoom"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/30 to-background/90" />
@@ -203,6 +230,7 @@ function Hero() {
       <div className="relative z-10 mx-auto flex h-full max-w-[1400px] flex-col justify-end px-6 pb-24 md:px-12 md:pb-32">
         <p className="eyebrow animate-fade-up delay-100">Fotografía de bodas y eventos</p>
         <h1 className="mt-6 max-w-4xl text-[clamp(2.5rem,6vw,5.5rem)] leading-[1.02] animate-fade-up delay-200">
+          <span className="sr-only">Charo Sevilla — Fotógrafa de bodas y eventos en Sevilla. </span>
           Historias que merecen ser
           <span className="font-serif-italic text-gold"> recordadas </span>
           para siempre.
@@ -268,27 +296,27 @@ function Gallery({ onOpen }: { onOpen: (c: Category) => void }) {
             onClick={() => onOpen(categories[0])}
             className="hover-zoom group relative md:col-span-4 md:row-span-2 aspect-[4/5] md:aspect-auto md:h-[680px] overflow-hidden"
           >
-            <img src={categories[0].image} alt={categories[0].title} loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
+            <img src={categories[0].image} alt={categories[0].alt} loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
             <CardOverlay c={categories[0]} large />
           </button>
 
           <button type="button" onClick={() => onOpen(categories[1])} className="hover-zoom group relative md:col-span-2 aspect-[4/5] md:aspect-auto md:h-[330px] overflow-hidden">
-            <img src={categories[1].image} alt={categories[1].title} loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
+            <img src={categories[1].image} alt={categories[1].alt} loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
             <CardOverlay c={categories[1]} />
           </button>
 
           <button type="button" onClick={() => onOpen(categories[2])} className="hover-zoom group relative md:col-span-2 aspect-[4/5] md:aspect-auto md:h-[330px] overflow-hidden">
-            <img src={categories[2].image} alt={categories[2].title} loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
+            <img src={categories[2].image} alt={categories[2].alt} loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
             <CardOverlay c={categories[2]} />
           </button>
 
           <button type="button" onClick={() => onOpen(categories[3])} className="hover-zoom group relative md:col-span-3 aspect-[4/5] md:aspect-auto md:h-[440px] overflow-hidden">
-            <img src={categories[3].image} alt={categories[3].title} loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
+            <img src={categories[3].image} alt={categories[3].alt} loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
             <CardOverlay c={categories[3]} />
           </button>
 
           <button type="button" onClick={() => onOpen(categories[4])} className="hover-zoom group relative md:col-span-3 aspect-[4/5] md:aspect-auto md:h-[440px] overflow-hidden">
-            <img src={categories[4].image} alt={categories[4].title} loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
+            <img src={categories[4].image} alt={categories[4].alt} loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
             <CardOverlay c={categories[4]} />
           </button>
         </div>
