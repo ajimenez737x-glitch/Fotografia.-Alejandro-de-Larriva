@@ -50,6 +50,14 @@ const categories: Category[] = [
   { id: "retratos", title: "Retratos", subtitle: "Retratos artísticos y personales",         image: galleryRetratos, count: "05" },
 ];
 
+const galleryImages: Record<string, string[]> = {
+  bodas:    [galleryBodas,    boda1,    boda2,    pareja1, evento1],
+  parejas:  [galleryParejas,  pareja1,  pareja2,  boda1,   familia1],
+  eventos:  [galleryEventos,  evento1,  evento2,  boda2,   familia2],
+  familia:  [galleryFamilia,  familia1, familia2, pareja2, retrato1],
+  retratos: [galleryRetratos, retrato1, retrato2, evento2, boda1],
+};
+
 const services = [
   { title: "Fotografía de bodas",     desc: "Cobertura completa del día. Reportaje narrativo y emocional desde los preparativos hasta el último baile." },
   { title: "Eventos privados",        desc: "Celebraciones, aniversarios y fiestas familiares contadas con sensibilidad." },
