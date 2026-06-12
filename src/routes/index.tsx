@@ -27,9 +27,34 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Fotógrafa freelance en Sevilla especializada en bodas, parejas y eventos. Reportajes emocionales, naturales y atemporales." },
       { property: "og:title", content: "Charo Sevilla Fotografía — Bodas y eventos en Sevilla" },
       { property: "og:description", content: "Reportajes emocionales de bodas y eventos en Sevilla." },
-      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://charo-sevilla-emotions.lovable.app/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://charo-sevilla-emotions.lovable.app/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: "Charo Sevilla Fotografía",
+          description: "Fotógrafa freelance en Sevilla especializada en bodas, parejas, eventos y reportajes emocionales.",
+          image: "https://charo-sevilla-emotions.lovable.app/og-image.jpg",
+          url: "https://charo-sevilla-emotions.lovable.app/",
+          areaServed: "Sevilla, España",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Sevilla",
+            addressCountry: "ES",
+          },
+          contactPoint: {
+            "@type": "ContactPoint",
+            contactType: "customer service",
+            telephone: "+34600000000",
+            availableLanguage: ["Spanish"],
+          },
+        }),
+      },
+    ],
   }),
   component: Index,
 });
@@ -39,15 +64,16 @@ type Category = {
   title: string;
   subtitle: string;
   image: string;
+  alt: string;
   count: string;
 };
 
 const categories: Category[] = [
-  { id: "bodas",    title: "Bodas",    subtitle: "Ceremonias, preparativos y celebraciones", image: galleryBodas,    count: "01" },
-  { id: "parejas",  title: "Parejas",  subtitle: "Sesiones románticas y naturales",          image: galleryParejas,  count: "02" },
-  { id: "eventos",  title: "Eventos",  subtitle: "Privados, corporativos y celebraciones",   image: galleryEventos,  count: "03" },
-  { id: "familia",  title: "Familia",  subtitle: "Momentos familiares auténticos",           image: galleryFamilia,  count: "04" },
-  { id: "retratos", title: "Retratos", subtitle: "Retratos artísticos y personales",         image: galleryRetratos, count: "05" },
+  { id: "bodas",    title: "Bodas",    subtitle: "Ceremonias, preparativos y celebraciones", image: galleryBodas,    alt: "Reportajes de bodas en Sevilla",            count: "01" },
+  { id: "parejas",  title: "Parejas",  subtitle: "Sesiones románticas y naturales",          image: galleryParejas,  alt: "Sesiones de parejas en Sevilla",            count: "02" },
+  { id: "eventos",  title: "Eventos",  subtitle: "Privados, corporativos y celebraciones",   image: galleryEventos,  alt: "Fotografía de eventos privados y corporativos", count: "03" },
+  { id: "familia",  title: "Familia",  subtitle: "Momentos familiares auténticos",           image: galleryFamilia,  alt: "Sesiones familiares en Sevilla",            count: "04" },
+  { id: "retratos", title: "Retratos", subtitle: "Retratos artísticos y personales",         image: galleryRetratos, alt: "Retratos artísticos y editoriales",         count: "05" },
 ];
 
 const galleryImages: Record<string, string[]> = {
