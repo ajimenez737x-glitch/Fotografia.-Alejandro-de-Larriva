@@ -296,27 +296,27 @@ function Gallery({ onOpen }: { onOpen: (c: Category) => void }) {
             onClick={() => onOpen(categories[0])}
             className="hover-zoom group relative md:col-span-4 md:row-span-2 aspect-[4/5] md:aspect-auto md:h-[680px] overflow-hidden"
           >
-            <img src={categories[0].image} alt={categories[0].title} loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
+            <img src={categories[0].image} alt={categories[0].alt} loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
             <CardOverlay c={categories[0]} large />
           </button>
 
           <button type="button" onClick={() => onOpen(categories[1])} className="hover-zoom group relative md:col-span-2 aspect-[4/5] md:aspect-auto md:h-[330px] overflow-hidden">
-            <img src={categories[1].image} alt={categories[1].title} loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
+            <img src={categories[1].image} alt={categories[1].alt} loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
             <CardOverlay c={categories[1]} />
           </button>
 
           <button type="button" onClick={() => onOpen(categories[2])} className="hover-zoom group relative md:col-span-2 aspect-[4/5] md:aspect-auto md:h-[330px] overflow-hidden">
-            <img src={categories[2].image} alt={categories[2].title} loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
+            <img src={categories[2].image} alt={categories[2].alt} loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
             <CardOverlay c={categories[2]} />
           </button>
 
           <button type="button" onClick={() => onOpen(categories[3])} className="hover-zoom group relative md:col-span-3 aspect-[4/5] md:aspect-auto md:h-[440px] overflow-hidden">
-            <img src={categories[3].image} alt={categories[3].title} loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
+            <img src={categories[3].image} alt={categories[3].alt} loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
             <CardOverlay c={categories[3]} />
           </button>
 
           <button type="button" onClick={() => onOpen(categories[4])} className="hover-zoom group relative md:col-span-3 aspect-[4/5] md:aspect-auto md:h-[440px] overflow-hidden">
-            <img src={categories[4].image} alt={categories[4].title} loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
+            <img src={categories[4].image} alt={categories[4].alt} loading="lazy" width={1024} height={1280} className="h-full w-full object-cover" />
             <CardOverlay c={categories[4]} />
           </button>
         </div>
