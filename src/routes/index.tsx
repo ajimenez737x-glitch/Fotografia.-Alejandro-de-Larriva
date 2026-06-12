@@ -7,6 +7,16 @@ import galleryParejas from "@/assets/gallery-parejas.jpg";
 import galleryEventos from "@/assets/gallery-eventos.jpg";
 import galleryFamilia from "@/assets/gallery-familia.jpg";
 import galleryRetratos from "@/assets/gallery-retratos.jpg";
+import boda1 from "@/assets/boda-1.jpg";
+import boda2 from "@/assets/boda-2.jpg";
+import pareja1 from "@/assets/pareja-1.jpg";
+import pareja2 from "@/assets/pareja-2.jpg";
+import evento1 from "@/assets/evento-1.jpg";
+import evento2 from "@/assets/evento-2.jpg";
+import familia1 from "@/assets/familia-1.jpg";
+import familia2 from "@/assets/familia-2.jpg";
+import retrato1 from "@/assets/retrato-1.jpg";
+import retrato2 from "@/assets/retrato-2.jpg";
 import aboutCharo from "@/assets/about-charo.jpg";
 import ctaBg from "@/assets/cta-bg.jpg";
 
